@@ -152,7 +152,7 @@ class Party
     try
     {
       // start up all of the threads
-      // I tried doing this is a neat loop but it wasn't working so here we are
+      // I tried doing all this is a neat loop but it wasn't working so here we are
       Thread minotaur = new Thread(new Minotaur(threadCount, guestInMaze, success));
       Thread guest1 = new Thread(new Guest(threadCount, 1, guestInMaze, success, cupcake));
       Thread guest2 = new Thread(new Guest(threadCount, 2, guestInMaze, success, cupcake));
@@ -174,7 +174,6 @@ class Party
       Thread guest18 = new Thread(new Guest(threadCount, 18, guestInMaze, success, cupcake));
       Thread guest19 = new Thread(new Guest(threadCount, 19, guestInMaze, success, cupcake));
       Thread guest20 = new Thread(new Guest(threadCount, 20, guestInMaze, success, cupcake));
-      
       
       guest1.start();
       guest2.start();
