@@ -18,17 +18,17 @@ Therefore, only threads that have NOT eaten will remove cupcakes, and threads th
 
 After a thread has eaten a cupcake, it will begin to count how many consecutive times it enters the maze and sees a cupcake there.
 If it enters the maze and does NOT see a cupcake, it will reset its count.
-The goal for each thread is to count up to half of whatever the maximum number of threads is, in this program's case, 10.
-If any single thread visits the maze 10 times in a row and sees a cupcake sitting there, it then makes the assumption that,
-  having seen a cupcake present 10 times in a row, that everyone has entered the maze since no threads have eaten a cupcake in a while
+The goal for each thread is to count up to whatever the maximum number of threads is. In this program's case, 20.
+If any single thread visits the maze 20 times in a row and sees a cupcake sitting there, it then makes the assumption that,
+  having seen a cupcake present 20 times in a row, that everyone has entered the maze since no threads have eaten a cupcake in a while
   (since threads only eat when they first enter).
 
 Due to how this works, each thread will likely reset its counting several times at the start because there will be threads constantly
   entering the maze and eating cupcakes on their first entrance, but as time goes on the numbers of threads that have eaten will grow
   and so the cupcakes will remain for longer periods of time.
-Again, once a thread counts 10 consecutive times it enters and sees a present cupcake, it will call a success and end the exercise.
+Again, once a thread counts 20 consecutive times it enters and sees a present cupcake, it will call a success and end the exercise.
 
 Technically, this approach leaves a small probability that a thread will not be called in the amount of time it takes any particular thread
-  to count to 10. However, this probability is so low that I have chosen to ignore it. Technically, using this method there is NO way to
-  entirely avoid that possibility, I can only bring it lower and lower, and so I think counting to half the thread count is a saatisfying balance
+  to count to 20. However, this probability is so low that I have chosen to ignore it. Technically, using this method there is NO way to
+  entirely avoid that possibility, I can only bring it lower and lower, and so I think counting to the thread count is a saatisfying balance
   between speed of execution and reduced probability of false success flags. My testing consistently saw good results so I rest my case on that.
