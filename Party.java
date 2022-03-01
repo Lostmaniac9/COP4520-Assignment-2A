@@ -24,7 +24,7 @@ class Minotaur implements Runnable
       while (success.toString() == "false")
       {
         // send in a guest
-        guestInMaze.set(ThreadLocalRandom.current().nextInt(1, threadCount));
+        guestInMaze.set(ThreadLocalRandom.current().nextInt(1, threadCount + 1));
         // busywait while waiting for a guest to exit the maze
         while (guestInMaze.intValue() != 0) {}
       }
@@ -100,10 +100,14 @@ class Guest implements Runnable
           cupcake.set(true);
           guestCounter = 1;
         }
-        System.out.println("Thread ID:" + id + " --- " + guestCounter);
+        
         // declare success if the number of guests to be counted is met
-        if (guestCounter == threadCount / 2)
+        if (guestCounter == threadCount)
+        {
           success.set(true);
+          System.out.println("Everyone has visited!");
+        }
+        
         // otherwise, reset value to allow another guest in
         guestInMaze.set(0);
       }
@@ -215,8 +219,6 @@ class Party
       guest18.join();
       guest19.join();
       guest20.join();
-      
-      System.out.println("done");
     }
     catch (Exception e)
     {
