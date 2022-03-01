@@ -32,3 +32,5 @@ Technically, this approach leaves a small probability that a thread will not be 
   to count to 20. However, this probability is so low that I have chosen to ignore it. Technically, using this method there is NO way to
   entirely avoid that possibility, I can only bring it lower and lower, and so I think counting to the thread count is a saatisfying balance
   between speed of execution and reduced probability of false success flags. My testing consistently saw good results so I rest my case on that.
+
+At the moment of a thread counting to 20 it then throws the success flag and declares "Everyone has visited!". The program then ends.
