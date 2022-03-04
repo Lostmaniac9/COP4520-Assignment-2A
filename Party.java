@@ -121,25 +121,6 @@ class Guest implements Runnable
   }
 }
 
-// the leader will do nothing lmao
-class Leader implements Runnable
-{
-
-  public void run()
-  {
-    try
-    {
-      
-    }
-    catch (Exception e)
-    {
-      System.out.println("Exception has occured" + e);
-    }
-    
-    return;
-  }
-}
-
 class Party 
 {
   public static void main(String args[])
