@@ -1,4 +1,4 @@
-To execute my program, download it and use the commands "javac Party.java" followed by "java Party"
+To execute this program, use the commands "javac Party.java" followed by "java Party".
 
 My solution is as follows:
 
